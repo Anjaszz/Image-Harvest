@@ -80,86 +80,67 @@ function CollectionPack({
   }
 
   return (
-    <div className="relative">
-      <Swiper
+    <div className="border border-blue-400 p-4 rounded-lg bg-white mb-12 max-w-xs">
+    <Swiper 
         ref={sliderRef}
-        className="carousel"
-        onSlideChange={(e) => setActiveIndex(e.activeIndex)}
-      >
+        className="border-2 border-green-300 w-full h-40 rounded-lg" 
+        onSlideChange={(e) => {
+            setActiveIndex(e.activeIndex);
+        }}
+    >
         <SwiperSlide>
-          <img
-            src={previewPhotoOne}
-            alt={altDescription}
-            className="object-cover w-full h-full"
-          />
+            <img src={previewPhotoOne} alt={altDescription} className="w-full h-full object-cover rounded-md" />
         </SwiperSlide>
         <SwiperSlide>
-          <img
-            src={previewPhotoTwo}
-            alt={`photo relating to ${title}`}
-            className="object-cover w-full h-full"
-          />
+            <img src={previewPhotoTwo} alt={`photo relating to ${title}`} className="w-full h-full object-cover rounded-md" />
         </SwiperSlide>
         <SwiperSlide>
-          <img
-            src={previewPhotoThree}
-            alt={`photo relating to ${title}`}
-            className="object-cover w-full h-full"
-          />
+            <img src={previewPhotoThree} alt={`photo relating to ${title}`} className="w-full h-full object-cover rounded-md" />
         </SwiperSlide>
-      </Swiper>
-      <div className="flex justify-center mt-4 space-x-2">
-        <span
-          onClick={() => {
-            sliderRef.current.swiper.slideTo(0);
-          }}
-          className={`h-2 w-2 rounded-full ${
-            activeIndex === 0 ? 'bg-blue-500' : 'bg-gray-400'
-          } cursor-pointer`}
+    </Swiper>
+    <div className="flex max-w-xs items-center justify-center mx-auto my-4">
+        <span 
+            onClick={() => {
+                sliderRef.current.swiper.slideTo(0);
+            }}
+            className={`w-2.5 h-2.5 ${activeIndex == 0 ? "bg-gray-700" : "bg-gray-400"} rounded-full cursor-pointer mx-1`}
         ></span>
         {total >= 2 && (
-          <span
-            onClick={() => {
-              sliderRef.current.swiper.slideTo(1);
-            }}
-            className={`h-2 w-2 rounded-full ${
-              activeIndex === 1 ? 'bg-blue-500' : 'bg-gray-400'
-            } cursor-pointer`}
-          ></span>
+            <span 
+                onClick={() => {
+                    sliderRef.current.swiper.slideTo(1);
+                }}
+                className={`w-2.5 h-2.5 ${activeIndex == 1 ? "bg-gray-700" : "bg-gray-400"} rounded-full cursor-pointer mx-1`}
+            ></span>
         )}
         {total >= 3 && (
-          <span
-            onClick={() => {
-              sliderRef.current.swiper.slideTo(2);
-            }}
-            className={`h-2 w-2 rounded-full ${
-              activeIndex === 2 ? 'bg-blue-500' : 'bg-gray-400'
-            } cursor-pointer`}
-          ></span>
+            <span 
+                onClick={() => {
+                    sliderRef.current.swiper.slideTo(2);
+                }}
+                className={`w-2.5 h-2.5 ${activeIndex == 2 ? "bg-gray-700" : "bg-gray-400"} rounded-full cursor-pointer mx-1`}
+            ></span>
         )}
-      </div>
-      <p className="text-center mt-4 text-lg font-semibold">
-        • {title} by {user}
-      </p>
-      <p className="text-center text-gray-600">
-        • {total} images
-      </p>
-      <div className="flex justify-center mt-4 space-x-4">
-        <button
-          onClick={handleImageDownload}
-          className="flex items-center bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 transition"
-        >
-          <FaDownload/>
-          Download
-        </button>
-        <button
-          onClick={() => handleViewImagesClick(id, total, title, user)}
-          className="bg-gray-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-gray-600 transition"
-        >
-          View Images
-        </button>
-      </div>
     </div>
+    <p className="text-xl font-medium text-center">• {title} by {user}</p>
+    <p className="text-base text-center my-4">• {total} images</p>
+    <div className="flex items-center justify-between flex-wrap">
+        <button 
+            onClick={handleImageDownload}
+            className="px-4 py-2 flex items-center justify-center text-white bg-blue-500 rounded-lg"
+        >
+            <FaDownload/>
+            Download
+        </button>
+        <button 
+            onClick={() => handleViewImagesClick(id, total, title, user)}
+            className="px-4 py-2 border-2 border-blue-500 bg-transparent rounded-lg"
+        >
+            View Images
+        </button>
+    </div>
+</div>
+
   );
 }
 

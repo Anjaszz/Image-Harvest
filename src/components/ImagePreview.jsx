@@ -8,24 +8,23 @@ function ImageViewer({ src, bgColor, setImagePreviewSrc }) {
   };
 
   return (
-    <div
-    className="fixed top-0 left-0 w-full min-h-screen z-40 bg-overlay backdrop-blur-lg animate-blur padding-bottom-80"
-    style={style}
-  >
-    <div className="flex flex-col items-end w-[90%] max-w-[40rem] mt-[9rem] mx-auto">
-      {/* Ganti img dengan komponen IoMdClose */}
-      <IoMdClose
-        onClick={() => {
-          setImagePreviewSrc("");
-        }}
-        className="w-12 mb-8 cursor-pointer drop-shadow-[0_0_0.1rem_rgba(0,0,0,0.432)]"
-      />
-
-      <div className="w-full max-w-[40rem] h-[50rem] overflow-hidden mx-auto border-4 rounded-lg">
-        <img src={src} alt="Preview" className="object-cover w-full h-full" />
-      </div>
+    <div className="fixed top-0 left-0 w-full min-h-screen z-40 bg-[var(--overlay)] backdrop-blur-md pb-80 animate-blur duration-500 ease-in-out">
+    <div className="flex flex-col items-end w-11/12 mt-10 mx-auto">
+        <IoMdClose 
+            onClick={() => setImagePreviewSrc("")}
+            className="w-12 mb-8 cursor-pointer drop-shadow-sm"
+        />
+        <div className="w-full max-w-80 h-4/5 overflow-hidden border-black border-4 border-solid rounded-lg mx-auto">
+            <img 
+                src={src} 
+                alt="Preview"
+                className="object-cover w-full h-full"
+            />
+        </div>
     </div>
-  </div>
+</div>
+
+
   );
 }
 

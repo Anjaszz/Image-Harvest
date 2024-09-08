@@ -7,17 +7,18 @@ function Image({src, color, setImagePreviewSrc,setBgColor, description}) {
     }
     return (
         <div 
-        onClick={() => {
-          handleImageClick(src, color);
+        onClick={()=>{
+          handleImageClick(src, color)
         }}
-        className="relative overflow-hidden"
-      >
-        <img
-          src={src}
-          alt={description || "image"}
-          className="object-cover min-h-full transition ease-in-out duration-200"
-        />
-      </div>
+        className="border w-[15rem] max-w-[20rem] h-[20rem] mb-[2rem] overflow-hidden rounded-[1rem]"
+       >
+                <img
+  src={src}
+  alt={description || "image"}
+  className="object-cover min-h-full transition-transform duration-300 ease-in-out hover:scale-110"
+/>
+
+              </div>
       
     )
   }
