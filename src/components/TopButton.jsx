@@ -15,7 +15,7 @@ function BackToTop() {
     <div 
     onClick={backToTop}
     className='back-to-top-container'>
-        <img src={FaArrowUp} alt="go back to the top of the page" />
+        <FaArrowUp />
     </div>
   )
 }

@@ -100,10 +100,10 @@ function PackView() {
   return (
     <div className="min-h-screen pb-8">
     <div className="bg-white fixed top-0 left-0 w-full flex items-center justify-between px-8 py-4 z-10">
-      {/* Ganti <img> dengan komponen IoIosArrowBack */}
+    
       <IoIosArrowBack
         onClick={navigateToPreviousPage}
-        className="mr-4 cursor-pointer text-2xl" // Tambahkan ukuran atau gaya
+        className="mr-4 cursor-pointer text-2xl"
       />
       <InputAndSearchButton />
     </div>

@@ -22,32 +22,34 @@ function InputAndSearchButton() {
 
   return (
     <>
-      <form 
-        onSubmit={(e) => formValidator(e, searchInput)}
-        className="input-and-search-container"
+    <form 
+      onSubmit={(e) => formValidator(e, searchInput)}
+      className="flex justify-center items-center w-full max-w-lg mx-auto bg-white rounded-lg shadow-md p-4"
+    >
+      <input
+        value={searchInput}
+        ref={inputRef}
+        tabIndex={0}
+        onChange={(e) => {
+          setInputError(false);
+          setSearchInput(e.target.value);
+        }}
+        type="text"
+        placeholder="Enter keyword (e.g., Shoes)"
+        className="w-full py-2 text-black px-4 rounded-l-lg border border-gray-300 focus:outline-none focus:border-blue-500"
+      />
+
+      <button 
+        type="submit"
+        onClick={(e) => formValidator(e, searchInput)}
+        className="bg-blue-600 text-white p-3 rounded-r-lg hover:bg-blue-700 transition duration-300 ease-in-out"
       >
-        <input
-          value={searchInput}
-          ref={inputRef}
-          tabIndex={0}
-          onChange={(e) => {
-            setInputError(false);
-            setSearchInput(e.target.value);
-          }}
-          type="text"
-          placeholder="Shoes"
-        />
+        <FaSearch className="text-lg" /> {/* Ikon pencarian */}
+      </button>
+    </form>
 
-        <button 
-          type="submit"
-          onClick={(e) => formValidator(e, searchInput)}
-        >
-          <FaSearch /> {/* Gunakan ikon FaSearch sebagai komponen */}
-        </button>
-      </form>
-
-      {inputError && <p className="err">Please enter a value</p>}
-    </>
+    {inputError && <p className="text-red-500 mt-2 text-sm text-center">Please enter a value</p>}
+  </>
   );
 }
 
