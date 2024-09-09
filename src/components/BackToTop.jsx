@@ -14,7 +14,7 @@ function BackToTop() {
   return (
     <div 
     onClick={backToTop}
-    className="fixed bottom-4 right-4 bg-violet-600 text-white p-3 rounded-full shadow-lg cursor-pointer hover:bg-violet-700 transition duration-300 ease-in-out"
+    className="fixed bottom-4 right-4 bg-blue-600 text-white p-3 rounded-full shadow-lg cursor-pointer hover:bg-blue-700 transition duration-300 ease-in-out"
 >
     <FaArrowUp className="text-xl" />
 </div>

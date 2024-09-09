@@ -1,5 +1,6 @@
 import InputAndSearchButton from "../components/inputButton";
 import { FaCheckCircle, FaCloudDownloadAlt, FaUsers, FaThumbsUp } from 'react-icons/fa';
+import BackToTop from "../components/BackToTop";
 
 function Home() {
   return (
@@ -8,7 +9,7 @@ function Home() {
   <div className="container mx-auto px-4">
     <div className="flex items-center justify-center md:justify-start">
       <img src="/logo.png" alt="Logo" className="w-12 h-12 mr-3" />
-      <h1 className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-teal-500  font-black text-lg xl:text-3xl">Harvest Image</h1>
+      <h1 className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-teal-500  font-black text-lg xl:text-3xl">Harvest Images</h1>
     </div>
   </div>
 </header>
@@ -67,14 +68,15 @@ function Home() {
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-8">
         <div className="container mx-auto px-6 text-center">
-          <p className="text-sm mb-4">&copy; 2024 Bulk Downloader. All rights reserved.</p>
+          <p className="text-sm mb-4">&copy; 2024 Harvest Images. All rights reserved.</p>
           <div className="flex justify-center space-x-4">
-            <a href="#" className="text-blue-400">Facebook</a>
-            <a href="#" className="text-blue-400">Twitter</a>
-            <a href="#" className="text-blue-400">Instagram</a>
+            <a href="https://www.facebook.com/anjasRanii" className="text-blue-400">Facebook</a>
+            <a href="https://www.linkedin.com/in/anjas-rani-562396212" className="text-blue-400">LinkedIn</a>
+            <a href="https://instagram.com/anjaszz_" className="text-blue-400">Instagram</a>
           </div>
         </div>
       </footer>
+      <BackToTop/>
     </>
   );
 }

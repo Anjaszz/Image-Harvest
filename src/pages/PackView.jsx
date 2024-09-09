@@ -17,7 +17,7 @@ function PackView() {
    const [imagePreviewSrc, setImagePreviewSrc] = useState("")
    const [bgColor, setBgColor] = useState("")
    const [previewPhotosArray, setPreviewPhotosArray] = useState([])
-   const key = "g7d7KRxOl8fE437qOTxlsf9XYcd3ApDgtZlLs5XMa3Y"
+   const apiKey = import.meta.env.VITE_API_KEY;
 
    const collectionPhotos = previewPhotosArray.map((photo) => {
       return (
@@ -37,7 +37,7 @@ function PackView() {
    const [downloadIndicator, setDownloadIndicator] = useState(false)
 
    useEffect(() => {
-      fetch(`https://api.unsplash.com/collections/${collectionId}/photos?client_id=${key}&per_page=30`)
+      fetch(`https://api.unsplash.com/collections/${collectionId}/photos?client_id=${apiKey}&per_page=30`)
       .then(response => response.json())
       .then(photos => {
          setError(false)
@@ -56,7 +56,7 @@ function PackView() {
    let images = []
 
    function handleImageDownload() {
-      return fetch(`https://api.unsplash.com/collections/${collectionId}/photos?client_id=${key}&page=${page}&per_page=${perPage}`)
+      return fetch(`https://api.unsplash.com/collections/${collectionId}/photos?client_id=${apiKey}&page=${page}&per_page=${perPage}`)
       .then(response => response.json())
       .then(data => {
          images.push(...data)
