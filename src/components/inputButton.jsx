@@ -21,11 +21,13 @@ function InputAndSearchButton() {
   }
 
   return (
-    <>
-    <form 
-      onSubmit={(e) => formValidator(e, searchInput)}
-      className="flex justify-center items-center w-full max-w-lg mx-auto bg-white rounded-lg shadow-md p-4"
-    >
+   // InputAndSearchButton Component
+<>
+  <form
+    onSubmit={(e) => formValidator(e, searchInput)}
+    className="flex flex-col justify-center items-center w-full max-w-lg mx-auto rounded-lg p-4"
+  >
+    <div className="flex w-full">
       <input
         value={searchInput}
         ref={inputRef}
@@ -36,20 +38,26 @@ function InputAndSearchButton() {
         }}
         type="text"
         placeholder="Enter keyword (e.g., Shoes)"
-        className="w-full py-2 text-black px-4 rounded-l-lg border border-gray-300 focus:outline-none focus:border-blue-500"
+        className={`w-full py-2 text-black px-4 rounded-l-lg border ${
+          inputError ? "border-red-500" : "border-gray-300"
+        } focus:outline-none focus:border-blue-500`}
       />
 
-      <button 
+      <button
         type="submit"
         onClick={(e) => formValidator(e, searchInput)}
         className="bg-blue-600 text-white p-3 rounded-r-lg hover:bg-blue-700 transition duration-300 ease-in-out"
       >
         <FaSearch className="text-lg" /> {/* Ikon pencarian */}
       </button>
-    </form>
+    </div>
 
-    {inputError && <p className="text-red-500 mt-2 text-sm text-center">Please enter a value</p>}
-  </>
+    {inputError && (
+      <p className="text-red-500 mt-2 text-sm text-center">Please enter a value</p>
+    )}
+  </form>
+</>
+
   );
 }
 

@@ -80,10 +80,10 @@ function CollectionPack({
   }
 
   return (
-    <div className="border border-blue-400 p-4 rounded-lg bg-white mb-12 max-w-xs">
+    <div className="border border-blue-400 p-4 rounded-lg bg-white mb-8 max-w-xs">
     <Swiper 
         ref={sliderRef}
-        className="border-2 border-green-300 w-full h-40 rounded-lg" 
+        className="border-2 border-gray-300 w-full h-40 rounded-lg" 
         onSlideChange={(e) => {
             setActiveIndex(e.activeIndex);
         }}
@@ -122,19 +122,20 @@ function CollectionPack({
             ></span>
         )}
     </div>
-    <p className="text-xl font-medium text-center">• {title} by {user}</p>
-    <p className="text-base text-center my-4">• {total} images</p>
+    <p className="text-lg sm:text-xl lg:text-2xl font-semibold text-center text-gray-800">{title} by {user}</p>
+    <p className="text-sm sm:text-base lg:text-lg text-center mb-5 text-gray-600">{total} images</p>
     <div className="flex items-center justify-between flex-wrap">
-        <button 
-            onClick={handleImageDownload}
-            className="px-4 py-2 flex items-center justify-center text-white bg-blue-500 rounded-lg"
-        >
-            <FaDownload/>
-            Download
-        </button>
+    <button 
+    onClick={handleImageDownload}
+    className="flex items-center px-5 py-2 text-white bg-violet-600 border border-violet-600 rounded active:text-violet-500 hover:bg-transparent hover:text-violet-600 focus:outline-none focus:ring"
+>
+    <FaDownload className="mr-2" />
+    Download
+</button>
+
         <button 
             onClick={() => handleViewImagesClick(id, total, title, user)}
-            className="px-4 py-2 border-2 border-blue-500 bg-transparent rounded-lg"
+            className="px-5 py-2 min-w-[120px] text-center text-violet-600 border border-violet-600 rounded hover:bg-violet-600 hover:text-white active:bg-indigo-500 focus:outline-none focus:ring"
         >
             View Images
         </button>

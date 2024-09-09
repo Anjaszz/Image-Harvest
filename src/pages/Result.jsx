@@ -1,10 +1,11 @@
-import InputAndSearchButton from '../components/inputButton';
-import BackToTop from '../components/TopButton';
+
+import BackToTop from '../components/BackToTop';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import CollectionPack from '../components/CollectionPack';
 import ErrorComponent from '../components/Error';
 import { TbPhotoSearch } from "react-icons/tb";
+import { Header } from '../components/Header';
 
 
 function Results() {
@@ -51,18 +52,15 @@ function Results() {
 
     return (
         <div className="bg-gray-50 min-h-screen">
-            <header className="w-full bg-white shadow-lg border-b p-4">
-                <InputAndSearchButton />
-            </header>
-
+           <Header/>
             {!isLoading && (
-                <main className="py-8">
+                <main className="py-8 mt-24">
                     <p className="text-xl font-medium text-gray-700 mb-4 text-center">
                         Showing results for <span className="font-bold text-blue-600">{searchTerm}</span>
                     </p>
                     {error && <ErrorComponent />}
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto justify-items-center">
                         {collectionPack}
                     </div>
                 </main>

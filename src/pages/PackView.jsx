@@ -1,6 +1,4 @@
-import { FaArrowLeft, FaDownload, FaSearch } from 'react-icons/fa'
-import { MdSearch } from 'react-icons/md'
-import InputAndSearchButton from '../components/inputButton'
+import { FaDownload, FaSearch } from 'react-icons/fa'
 import ImagePreviewer from '../components/ImagePreview'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
@@ -8,6 +6,8 @@ import Image from '../components/Image'
 import ErrorComponent from '../components/Error'
 import JSZip from 'jszip'
 import { saveAs } from 'file-saver'
+import { Header } from '../components/Header'
+import BackToTop from '../components/BackToTop'
 
 function PackView() {
    const { collectionId } = useParams()
@@ -99,14 +99,10 @@ function PackView() {
    }  
 
    return (
-    <div className="min-h-screen pt-0 pb-8">
-    <div className="fixed top-0 left-0 w-full bg-white flex items-center justify-between px-8 py-4 shadow-md border-b border-opacity-40">
-        <FaArrowLeft/>
-        <InputAndSearchButton />
-    </div>
-
+    <div className="min-h-screen mt-10 pb-4">
+      <Header/>
     {!isLoading && (
-        <main className='mx-auto'>
+        <main className='mx-14'>
             <p className="text-2xl pt-24 mb-8 font-clashmedium tracking-wide">
                 {title} by {user} [preview]<br />
                 <span className='text-lg text-opacity-63 text-[#663076] font-montserrat'>
@@ -114,14 +110,16 @@ function PackView() {
                 </span>
             </p>
             {error && <ErrorComponent />}
-            <div className="grid grid-cols-5 items-center gap-3 justify-items-center justify-between">
-                {collectionPhotos}
-            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 items-center gap-2 justify-items-center justify-between">
+  {collectionPhotos}
+</div>
+
             {!error && (
                 <button 
                     onClick={handleImageDownload}
-                    className="mt-8 mx-auto px-6 py-3 text-white bg-[var(--buttonBg)] rounded-lg flex items-center justify-center">
-                   <FaDownload/>
+                    className="mt-2 mx-auto w-auto text-center min-w-[200px] px-5 py-3 text-white transition-all rounded-md shadow-xl sm:w-auto bg-gradient-to-r from-blue-600 to-blue-500 hover:bg-gradient-to-b dark:shadow-blue-900 shadow-blue-200 hover:shadow-2xl hover:shadow-blue-400 hover:-tranneutral-y-px  flex items-center justify-center">
+                     
+                   <FaDownload className='mr-2'/>
                     Download
                 </button>
             )}
@@ -143,6 +141,7 @@ function PackView() {
             <p className="text-xl text-green-700 font-montserrat text-center">Your download will start soon</p>
         </div>
     )}
+    <BackToTop/>
 </div>
 
    )
