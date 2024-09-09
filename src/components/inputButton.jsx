@@ -37,7 +37,7 @@ function InputAndSearchButton() {
           setSearchInput(e.target.value);
         }}
         type="text"
-        placeholder="Enter keyword (e.g., Shoes)"
+        placeholder="Masukan kata kunci (Ex: Kucing)"
         className={`w-full py-2 text-black px-4 rounded-l-lg border ${
           inputError ? "border-red-500" : "border-gray-300"
         } focus:outline-none focus:border-blue-500`}
@@ -48,12 +48,12 @@ function InputAndSearchButton() {
         onClick={(e) => formValidator(e, searchInput)}
         className="bg-blue-600 text-white p-3 rounded-r-lg hover:bg-blue-700 transition duration-300 ease-in-out"
       >
-        <FaSearch className="text-lg" /> {/* Ikon pencarian */}
+        <FaSearch className="text-lg" />
       </button>
     </div>
 
     {inputError && (
-      <p className="text-red-500 mt-2 text-sm text-center">Please enter a value</p>
+      <p className="text-red-500 mt-2 text-sm text-center">Tolong masukan kata kunci</p>
     )}
   </form>
 </>

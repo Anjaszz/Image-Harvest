@@ -122,8 +122,8 @@ function CollectionPack({
             ></span>
         )}
     </div>
-    <p className="text-lg sm:text-xl lg:text-2xl font-semibold text-center text-gray-800">{title} by {user}</p>
-    <p className="text-sm sm:text-base lg:text-lg text-center mb-5 text-gray-600">{total} images</p>
+    <p className="text-lg sm:text-lg xl:text-xl font-semibold text-center text-gray-800">Gambar {title} Milik {user}</p>
+    <p className="text-sm sm:text-base lg:text-lg text-center mb-5 text-gray-600">{total} Gambar</p>
     <div className="flex items-center justify-between flex-wrap">
     <button 
     onClick={handleImageDownload}
@@ -137,7 +137,7 @@ function CollectionPack({
             onClick={() => handleViewImagesClick(id, total, title, user)}
             className="px-5 py-2 min-w-[120px] text-center text-violet-600 border border-violet-600 rounded hover:bg-violet-600 hover:text-white active:bg-indigo-500 focus:outline-none focus:ring"
         >
-            View Images
+            Lihat Gambar
         </button>
     </div>
 </div>

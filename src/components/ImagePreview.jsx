@@ -2,10 +2,8 @@
 import { IoMdClose } from "react-icons/io";
 
 
-function ImageViewer({ src, bgColor, setImagePreviewSrc }) {
-  const style = {
-    backgroundColor: `${bgColor}67`,
-  };
+function ImageViewer({ src, setImagePreviewSrc }) {
+
 
   return (
     <div className="fixed top-0 left-0 w-full min-h-screen z-40 bg-[var(--overlay)] backdrop-blur-md pb-80 animate-blur duration-500 ease-in-out">

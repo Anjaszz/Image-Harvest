@@ -1,6 +1,7 @@
-import { FaDownload, FaSearch } from 'react-icons/fa'
+/* eslint-disable no-unused-vars */
+import { FaDownload } from 'react-icons/fa'
 import ImagePreviewer from '../components/ImagePreview'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import Image from '../components/Image'
 import ErrorComponent from '../components/Error'
@@ -11,7 +12,6 @@ import BackToTop from '../components/BackToTop'
 
 function PackView() {
    const { collectionId } = useParams()
-   const navigate = useNavigate()
    const [isLoading, setIsLoading] = useState(true)
    const [error, setError] = useState(false)
    const [imagePreviewSrc, setImagePreviewSrc] = useState("")
@@ -44,15 +44,11 @@ function PackView() {
          setPreviewPhotosArray(photos)
          setIsLoading(false)
       })
-      .catch((err) => {
+      .catch(() => {
          setError(true)
          setIsLoading(false)
       })
    }, [])
-
-   function navigateToPreviousPage() {
-      navigate(-1)
-   }
 
    let page = 1
    let perPage = 30
@@ -93,7 +89,7 @@ function PackView() {
             handleImageDownload()
          }
       })
-      .catch((err) => {
+      .catch(() => {
          alert("Seems like an error occurred while trying to download, please check your internet connection and try again")
       })
    }  
@@ -104,9 +100,9 @@ function PackView() {
     {!isLoading && (
         <main className='mx-6 lg:mx-14 mt-36'>
             <p className="text-xl lg:text-2xl mb-6 font-bold tracking-wide">
-                {title} by {user} [preview]<br />
-                <span className='text-sm text-opacity-63 text-[#663076] font-montserrat'>
-                    *You can preview an image by clicking/tapping on it*
+              Gambar {title} Milik {user}<br />
+                <span className='text-sm text-opacity-63 text-[#535dd1] font-montserrat'>
+                    *Klik Gambar untuk melihat pratinjau*
                 </span>
             </p>
             {error && <ErrorComponent />}
@@ -139,7 +135,7 @@ function PackView() {
 
     {downloadIndicator && (
         <div className="fixed top-40 left-1/2 transform -translate-x-1/2 w-11/12 max-w-md p-4 bg-[#d3ffd3] border border-green-500 shadow-lg rounded-lg hidden animate-disappear">
-            <p className="text-xl text-green-700 font-montserrat text-center">Your download will start soon</p>
+            <p className="text-xl text-green-700 font-montserrat text-center">Download akan segera dimulai</p>
         </div>
     )}
     <BackToTop/>

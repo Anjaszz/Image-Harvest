@@ -56,7 +56,7 @@ function Results() {
             {!isLoading && (
                 <main className="py-8 mt-28">
                     <p className="text-xl font-medium text-gray-700 mb-4 text-center">
-                        Showing results for <span className="font-bold text-blue-600">{searchTerm}</span>
+                        Menampilkan hasil pencarian <span className="font-bold text-blue-600">{searchTerm}</span>
                     </p>
                     {error && <ErrorComponent />}
 
@@ -70,13 +70,13 @@ function Results() {
                 <div className="flex flex-col items-center justify-center h-screen">
                     {/* Ganti <img> dengan ikon pencarian */}
                     <TbPhotoSearch className="w-16 h-16 animate-pulse" />
-                    <p className="text-gray-700 mt-4">Searching for images...</p>
+                    <p className="text-gray-700 mt-4">Mencari Gambar...</p>
                 </div>
             )}
 
             {downloadIndicator && (
                 <div className="fixed inset-0 bg-white bg-opacity-75 flex items-center justify-center">
-                    <p className="text-lg font-semibold">Your download will start soon...</p>
+                    <p className="text-lg font-semibold">Download Anda akan segera dimulai...</p>
                 </div>
             )}
 
