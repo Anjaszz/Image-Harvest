@@ -99,25 +99,25 @@ function PackView() {
    }  
 
    return (
-    <div className="min-h-screen mt-10 pb-4">
+    <div className="min-h-screen mt-8 pb-4">
       <Header/>
     {!isLoading && (
-        <main className='mx-14'>
-            <p className="text-2xl pt-24 mb-8 font-clashmedium tracking-wide">
+        <main className='mx-6 lg:mx-14 mt-36'>
+            <p className="text-xl lg:text-2xl mb-6 font-bold tracking-wide">
                 {title} by {user} [preview]<br />
-                <span className='text-lg text-opacity-63 text-[#663076] font-montserrat'>
+                <span className='text-sm text-opacity-63 text-[#663076] font-montserrat'>
                     *You can preview an image by clicking/tapping on it*
                 </span>
             </p>
             {error && <ErrorComponent />}
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 items-center gap-2 justify-items-center justify-between">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 items-center gap-10 justify-items-center justify-between">
   {collectionPhotos}
 </div>
 
             {!error && (
                 <button 
                     onClick={handleImageDownload}
-                    className="mt-2 mx-auto w-auto text-center min-w-[200px] px-5 py-3 text-white transition-all rounded-md shadow-xl sm:w-auto bg-gradient-to-r from-blue-600 to-blue-500 hover:bg-gradient-to-b dark:shadow-blue-900 shadow-blue-200 hover:shadow-2xl hover:shadow-blue-400 hover:-tranneutral-y-px  flex items-center justify-center">
+                    className="my-5 mx-auto w-auto text-center min-w-[200px] px-5 py-3 text-white transition-all rounded-md shadow-xl sm:w-auto bg-gradient-to-r from-blue-600 to-blue-500 hover:bg-gradient-to-b dark:shadow-blue-900 shadow-blue-200 hover:shadow-2xl hover:shadow-blue-400 hover:-tranneutral-y-px  flex items-center justify-center">
                      
                    <FaDownload className='mr-2'/>
                     Download
@@ -130,10 +130,11 @@ function PackView() {
     )}
 
     {isLoading && (
-        <div className="fixed top-0 left-0 w-full h-screen bg-white z-50 flex items-center justify-center">
-            <FaSearch className="w-9/12 max-w-3xl animate-glow" />
-            <p className="text-2xl font-clashmedium">Loading Preview...</p>
-        </div>
+       <div className="fixed top-0 left-0 w-full h-screen bg-white z-50 flex flex-col items-center justify-center">
+       <img src="/Search.jpg" alt="Loading preview" className="mb-4 w-1/2 max-w-md" />
+       <p className="text-2xl font-clashmedium">Memuat Gambar...</p>
+     </div>
+     
     )}
 
     {downloadIndicator && (

@@ -6,19 +6,24 @@ function Home() {
     <>
       {/* Hero Section */}
       <header className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-12 md:py-24">
-        <div className="container mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Download <span className="text-yellow-300">Bulk Images</span> Effortlessly</h1>
-          <p className="text-lg md:text-xl mb-8">
-            Get over 30+ images at once with a single click. Start saving your time now!
-          </p>
-          <InputAndSearchButton />
-          <img
-            className="mt-12 w-full max-w-lg mx-auto"
-            src="https://img.freepik.com/free-vector/download-concept-illustration_114360-3911.jpg"
-            alt="Illustration of a man holding a progress bar"
-          />
-        </div>
-      </header>
+  <div className="container mx-auto px-6 flex flex-col md:flex-row items-center text-center md:text-left">
+    <div className="md:flex-1">
+      <h1 className="xxl:text-4xl text-2xl md:text-6xl font-bold mb-6">
+        Download <span className="text-yellow-300"><br/>Banyak Gambar</span><br/> Dengan Mudah
+      </h1>
+      <p className="text-sm xxl:text-lg md:text-xl mb-8">
+      Dapatkan lebih dari 30+ gambar sekaligus hanya dengan satu klik. Hemat waktu Anda sekarang juga!
+      </p>
+      <InputAndSearchButton />
+    </div>
+    <img
+      className="mt-12 md:mt-0 w-full max-w-lg ml-0 md:ml-12"
+      src="/hero-img.png"
+      alt="Illustration of a man holding a progress bar"
+    />
+  </div>
+</header>
+
 
       {/* Features Section */}
       <section className="py-16 bg-gray-100 text-center">

@@ -10,7 +10,7 @@ function Image({src, color, setImagePreviewSrc,setBgColor, description}) {
         onClick={()=>{
           handleImageClick(src, color)
         }}
-        className="border-4 w-[13rem] max-w-[20rem] h-72 mb-[2rem] overflow-hidden rounded-[1rem] border-black">
+        className="border-4 w-[10rem] max-w-[20rem] h-60 lg:h-72 lg:w-56 overflow-hidden rounded-[1rem] border-black">
         <img src={src} alt={description || "image"} className="z-10 object-cover min-h-full transition-transform duration-300 ease-in-out hover:scale-110"/>
 
       </div>

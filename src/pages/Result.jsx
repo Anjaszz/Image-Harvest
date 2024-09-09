@@ -51,10 +51,10 @@ function Results() {
     ));
 
     return (
-        <div className="bg-gray-50 min-h-screen">
+        <div className="bg-white min-h-screen">
            <Header/>
             {!isLoading && (
-                <main className="py-8 mt-24">
+                <main className="py-8 mt-28">
                     <p className="text-xl font-medium text-gray-700 mb-4 text-center">
                         Showing results for <span className="font-bold text-blue-600">{searchTerm}</span>
                     </p>
