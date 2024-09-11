@@ -135,7 +135,7 @@ function PackView() {
 
     {downloadIndicator && (
         <div className="fixed top-40 left-1/2 transform -translate-x-1/2 w-11/12 max-w-md p-4 bg-[#d3ffd3] border border-green-500 shadow-lg rounded-lg hidden animate-disappear">
-            <p className="text-xl text-green-700 font-montserrat text-center">Download akan segera dimulai</p>
+            <p className="text-xl text-green-700 font-montserrat text-center">Download akan segera dimulai...</p>
         </div>
     )}
     <BackToTop/>

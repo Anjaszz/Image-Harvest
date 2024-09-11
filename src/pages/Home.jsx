@@ -9,7 +9,7 @@ function Home() {
   <div className="container mx-auto px-4">
     <div className="flex items-center justify-center md:justify-start">
       <img src="/logo.png" alt="Logo" className="w-12 h-12 mr-3" />
-      <h1 className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-teal-500  font-black text-lg xl:text-3xl">Harvest Images</h1>
+      <h1 className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-teal-500  font-black text-lg xl:text-3xl">Images Harvest</h1>
     </div>
   </div>
 </header>
