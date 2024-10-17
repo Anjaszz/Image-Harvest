@@ -1,6 +1,6 @@
 # Harvest Images
 
-**Harvest Images** adalah sebuah website yang memungkinkan pengguna untuk mengunduh gambar dalam jumlah besar (bulk) dengan mudah. Website ini dibangun menggunakan **React.js** dan **Tailwind CSS**, serta memanfaatkan **Unsplash API** untuk menyediakan gambar berkualitas tinggi.
+**Images Harvest** adalah sebuah website yang memungkinkan pengguna untuk mengunduh gambar dalam jumlah besar (bulk) dengan mudah. Website ini dibangun menggunakan **React.js** dan **Tailwind CSS**, serta memanfaatkan **Unsplash API** untuk menyediakan gambar berkualitas tinggi.
 
 ## Screenshot
 - Landing Page
