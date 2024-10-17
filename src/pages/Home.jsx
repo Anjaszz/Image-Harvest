@@ -38,7 +38,7 @@ function Home() {
       {/* Features Section */}
       <section className="py-16 bg-gray-100 text-center">
   <div className="container mx-auto px-6">
-    <h2 className="text-3xl font-semibold mb-8">Mengapa Menggunakan Pengunduh Massal Kami?</h2>
+    <h2 className="text-3xl font-bold mb-8">Mengapa Menggunakan Kami?</h2>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       <div className="feature-item">
         <FaCloudDownloadAlt className="text-blue-500 text-6xl mb-4 mx-auto" />
